@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 
+# tvOS needs commit bda29cf in libuv. This isn't in a release yet, so
+# specify commit hash.
+
 MASON_NAME=libuv
-MASON_VERSION=1.7.5
+MASON_VERSION=bda29cf8083ceb33a9abda421da267e81030ff77
 MASON_LIB_FILE=lib/libuv.a
 MASON_PKGCONFIG_FILE=lib/pkgconfig/libuv.pc
 
@@ -9,8 +12,8 @@ MASON_PKGCONFIG_FILE=lib/pkgconfig/libuv.pc
 
 function mason_load_source {
     mason_download \
-        https://github.com/libuv/libuv/archive/v1.7.5.tar.gz \
-        236deb17974ea1114121907672894c2a7bc6673c
+        https://github.com/libuv/libuv/archive/bda29cf8083ceb33a9abda421da267e81030ff77.zip \
+        384a7ac0a7008c6ea1922b8b07024ac869a26844
 
     mason_extract_tar_gz
 
